@@ -45,10 +45,6 @@ function Dashboard() {
             <h2
               style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">adityathakurbusiness@gmail.com
             </h2>
-            <h2
-              style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">
-              <span>Total Blog : </span>  15
-            </h2>
             <div className=" flex gap-2 mt-2">
               <Link to={'/createblog'}>
                 <div className=" mb-2">
