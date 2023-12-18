@@ -123,16 +123,16 @@ function AllBlogs() {
                           </p>
 
                           <div className="flex justify-center ">
-                            <Button
+                            <Button  onClick={()=> navigate(`/bloginfo/${id}`)}
                               style={{
                                 background: mode === 'dark'
                                   ? 'rgb(226, 232, 240)'
-                                  : 'rgb(30, 41, 59)',
+                                  : 'rgb(120, 123, 129)',
                                 color: mode === 'dark'
                                   ?
                                   'rgb(30, 41, 59)'
                                   : 'rgb(226, 232, 240)'
-                              }}>See All
+                              }}>Read Blog
                             </Button>
                           </div>
                         </div>

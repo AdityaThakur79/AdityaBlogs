@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MyContext from './myContext';
-import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, deleteDoc, doc, onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase/FirebaseConfig';
 import toast from 'react-hot-toast';
 
@@ -66,6 +66,16 @@ function MyState(props) {
         }
     }
 
+    const updateBlogs = async (id) => {
+        try {
+            await updateDoc(doc(db, "blogPost", id));
+            getAllBlogs()
+            toast.success("Blogs Updated successfully")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
 
     return (
@@ -77,7 +87,8 @@ function MyState(props) {
             loading,
             setloading,
             getAllBlog,
-            deleteBlogs
+            deleteBlogs,
+            updateBlogs
         }}>
             {props.children}
         </MyContext.Provider>

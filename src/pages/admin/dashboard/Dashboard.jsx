@@ -18,7 +18,7 @@ function Dashboard() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-}, [])
+  }, [])
   return (
     <Layout>
       <div className="py-10">
@@ -79,7 +79,26 @@ function Dashboard() {
                   Logout
                 </Button>
               </div>
+              
             </div>
+            {getAllBlog.length > 0
+                    ?
+                    <>
+                      {getAllBlog.map((item , i) => {
+                        console.log(i)
+                        return (
+                          <>
+                          <div key={i}>
+                         <h2 className='font-bold' >Total Blogs : {i + 1} </h2>
+                          </div>
+                          </>
+                        )
+                      })}</>
+                    :
+                    <>
+                      
+                    </>
+                  }
           </div>
         </div>
 
@@ -164,7 +183,7 @@ function Dashboard() {
                   :
                   <>
                     <div className='text-2xl text-black font-bold p-2' >
-                    <h1>No Blogs Currently</h1>
+                      <h1>No Blogs Currently</h1>
                     </div>
                   </>
                 }
